@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Single Catapulta! | frontendlabs demos</title>
+	<style type="text/css">
+		#ground{
+			display:block;
+			background: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+			width:500px;
+			height:500px;
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+		#visor{
+			position:absolute;
+			width:200px;
+			height:200px;
+			display:block;
+			opacity:0.7;
+			overflow:hidden;
+			top:0px;
+			left:0px;
+		}
+		#object{
+			position:absolute;
+			width:20px;
+			height:20px;
+			display:block;
+			background-color:red;
+			top:0px;
+			left:0px;}
+	</style>
+</head>
+<body>
+	  <div class="box2d-canvas-container size640x480">
+		<canvas id="canvas" width="800" height="400" style="background-color:#000"></canvas>
+	  </div>
+	  <!--camera current-->
+	  <textarea name="textarea" id="textarea-xx-yy" cols="30" rows="10"></textarea>
+	  <!--camera x/2 && y/2-->
+	  <textarea name="textarea" id="textarea-x-y" cols="30" rows="10"></textarea>
+	  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+	  <script src="js/Box2d.min.js"></script>
+	  <script async>
+		// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+		window.requestAnimFrame = (function(){
+			  return  window.requestAnimationFrame       || 
+					  window.webkitRequestAnimationFrame || 
+					  window.mozRequestAnimationFrame    || 
+					  window.oRequestAnimationFrame      || 
+					  window.msRequestAnimationFrame     || 
+					  function(/* function */ callback, /* DOMElement */ element){
+						window.setTimeout(callback, 1000 / 60);
+					  };
+		})();
+    </script>
+	<script type="text/javascript">
+		var b2Vec2 = Box2D.Common.Math.b2Vec2, 
+			b2AABB = Box2D.Collision.b2AABB,
+			b2BodyDef = Box2D.Dynamics.b2BodyDef,
+			b2Body = Box2D.Dynamics.b2Body,
+            b2FixtureDef = Box2D.Dynamics.b2FixtureDef,
+            b2Fixture = Box2D.Dynamics.b2Fixture,
+            b2World = Box2D.Dynamics.b2World,
+            b2MassData = Box2D.Collision.Shapes.b2MassData,
+            b2PolygonShape = Box2D.Collision.Shapes.b2PolygonShape,
+            b2CircleShape = Box2D.Collision.Shapes.b2CircleShape,
+            b2Shape = Box2D.Collision.Shapes.b2Shape,
+            b2DebugDraw = Box2D.Dynamics.b2DebugDraw,
+            b2MouseJoint =  Box2D.Dynamics.Joints.b2MouseJoint,
+            mouseJoint = Box2D.Dynamics.Joints.b2MouseJoint,
+            b2MouseJointDef =  Box2D.Dynamics.Joints.b2MouseJointDef,
+            b2RevoluteJoint = Box2D.Dynamics.Joints.b2RevoluteJoint,
+            b2RevoluteJointDef = Box2D.Dynamics.Joints.b2RevoluteJointDef,
+			world = new b2World(new b2Vec2(0, 10), true),
+			wScale = 30,
+			cnv = document.getElementById('canvas'),
+			ctx = cnv.getContext('2d');
+	</script>
+	<script type="text/javascript" src="js/catapult.js"></script>
+</body>
+</html>
