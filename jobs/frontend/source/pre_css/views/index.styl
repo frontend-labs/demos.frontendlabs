@@ -1,0 +1,69 @@
+@require '../_base/variables'
+@require '../_helpers/*'
+header
+	&.fixed
+		position fixed 
+		width 100%
+		z-index 1
+		> .container
+			display none 
+		.filter-search 
+			padding 10px 0
+			opacity 0.99
+		
+.hvr 
+	&.fulltime:before
+		background $fulltimeColor
+	&.parttime:before 	
+		background $parttimeColor
+	&.freelance:before
+		background $freelanceColor 
+.job-box
+	padding 20px 0
+	transition 0.3s ease all
+	border-bottom 1px dashed darken($lightGrey,10%) !important
+	color inherit
+	text-decoration none 
+	display block
+	transition 0.3s all 
+	&:hover 
+		background lighten($lightGrey,60%)
+		color black
+		transition 0.3s all 
+	.container
+		display flex 
+		align-items center
+		> span 
+			flex 1
+			text-align center
+	a 
+		text-decoration none
+		color inherit
+		transition 0.3s all
+		&:hover
+			color #000
+			transition 0.3s all
+	
+	.job-description
+		flex none !important
+		width 45%
+		text-align left !important
+	.job-title
+		font-size 1.3rem
+		display block
+		line-height 1.2
+	.job-type
+		color white
+		font-size 0.8rem 
+		margin-left 10px 
+		padding 3px 5px 
+		border-radius $borderRadius 
+	&.fulltime
+		.job-type 
+			background $fulltimeColor
+	&.parttime
+		.job-type 
+			background $parttimeColor
+	&.freelance
+		.job-type 
+			background $freelanceColor 

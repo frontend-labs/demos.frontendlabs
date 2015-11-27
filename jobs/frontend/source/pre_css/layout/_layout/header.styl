@@ -1,0 +1,137 @@
+/*
+* Layout
+* @module layout
+* @class header
+*/
+
+header
+	.nav
+		display flex 
+		align-items center
+		padding 40px 0
+		a:not(.logo) 
+			margin 0 10px
+			text-decoration none
+			color $brandPrimary
+			transition 0.3s all ease
+			&:hover 
+				color $btnBgColorHover
+			
+	.logo 
+		flex 1
+		font-size 4rem
+		font-weight bold
+		line-height 1
+		letter-spacing -4px
+		color lighten($brandPrimary, 20%)
+		text-decoration none
+		span 
+			font-size 1.3rem
+			letter-spacing 0
+			font-weight normal
+			margin-left 1rem
+			color lighten($fontColor, 80%)
+
+
+.filter-search
+	background lighten($brandPrimary, 95%) //$lightGrey
+	padding 20px 0
+	.container
+		display flex
+		align-items center
+	.separator
+		border-left 1px solid #ccc 
+		margin 0 1rem
+		height 2.5rem
+		width 1px
+		display inline-block
+		vertical-align middle
+	.search-bar
+		//col(2/5, gutter:1)
+		color #ccc
+		position relative
+		width 45%
+		flex none
+		.icon
+			position absolute
+			top 12px
+			left 10px
+			color $brandPrimary
+		input
+			border-radius $borderRadius
+			color $fontColor
+			border none 
+			padding 13px 10px 13px 40px
+			width 100%
+			font-size 1.1rem
+			&:focus 
+				outline none 
+				box-shadow 0 0 2px $brandPrimary
+	.location
+		//col(1/5, gutter:1)
+		border-left 1px solid darken($lightGrey,5%)
+		border-right 1px solid darken($lightGrey,5%)
+		flex 1
+		margin 0 1rem
+		.select 
+			margin auto
+			display block 
+			.icon
+				position absolute
+				color $brandPrimary //#ccc
+				top 12px
+				left 10px
+			select
+				padding-left 40px
+	.job-type
+		//col(2/5, gutter:1)
+		width 30%
+		flex none
+		display flex 
+		input 
+			//outline none 
+			//margin-right 5px
+			position absolute
+			opacity 0
+			z-index -1
+			&:checked ~ .control-indicator
+				&:before
+					display block
+					color white 
+					font-size 1rem
+					text-align center
+					margin-top 1px
+				&.freelance
+					background-color $freelanceColor
+					border none
+				&.fulltime
+					background-color $fulltimeColor
+					border none
+				&.parttime
+					background-color $parttimeColor
+					border none
+				
+		.icon:before
+			display none
+			
+		.control-indicator
+			position absolute
+			width 1.2rem
+			height 1.2rem 
+			border-radius $borderRadius
+			border 2px solid $fontColor
+			left 0
+			&.freelance
+				border-color $freelanceColor
+			&.fulltime
+				border-color $fulltimeColor
+			&.parttime
+				border-color $parttimeColor
+				
+		label 
+			cursor pointer
+			justify-content space-between
+			flex 1 
+			position relative
+			padding-left 1.5rem
+			

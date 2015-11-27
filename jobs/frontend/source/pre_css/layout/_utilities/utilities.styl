@@ -1,0 +1,78 @@
+/*
+* Resources
+* @module resources
+*/
+
+/*
+ * --------------------------------------
+ * Main
+ * --------------------------------------
+ */
+
+html
+	font-size $basefont
+
+body
+	font-family $familyPrimary
+	margin 0
+	padding 0
+	-webkit-text-size-adjust 100%
+
+/*
+ * --------------------------------------
+ * Aligns Classes
+ * --------------------------------------
+ */
+.align-right
+	text-align right
+.align-left
+	text-align left
+.align-center
+	text-align center
+
+/*
+ * --------------------------------------
+ * Margins Classes
+ * --------------------------------------
+ */
+.mt10
+	margin-top 10px
+.mt20
+	margin-top 20px
+.mb10
+	margin-bottom 10px
+.mb20
+	margin-bottom 20px
+.mb40
+	margin-bottom 40px
+
+/*
+ * --------------------------------------
+ * Contents Classes
+ * --------------------------------------
+ */
+.hide
+	display none
+.center-box
+	position relative
+	center($wrapperWidth)
+	padding 0 $gutterWrapper
+.center-image
+	position relative
+	img
+		bottom 0
+		left 0
+		margin auto
+		position absolute
+		right 0
+		top 0
+.row
+	cf()
+
+/*
+ * --------------------------------------
+ * Others Classes
+ * --------------------------------------
+ */
+.rotate180
+	transform rotate(180deg)

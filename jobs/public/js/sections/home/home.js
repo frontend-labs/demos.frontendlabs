@@ -1,0 +1,1 @@
+var fn;fn={greeting:function(n){var r;return r={es:"Hola",en:"Hello",fr:"Bonjour"},r[n]}};

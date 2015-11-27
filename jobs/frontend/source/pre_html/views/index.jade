@@ -1,0 +1,37 @@
+extends ../layout/layout.jade
+block content
+	.board
+		.job-list
+			- for (var i = 0; i < 10; i++) 
+				a.job-box.fulltime.hvr(href="job")
+					.container
+						span.job-description
+							span.job-title Desarrollador Junior Front-end
+							span.job-company Airbnb Inc.
+							small.job-type Full-time
+						span.job-location Perú
+						span.job-time 1d
+				a.job-box.fulltime.hvr(href="job")
+					.container
+						span.job-description
+							span.job-title Front-end Developer para proyecto
+							span.job-company EECC
+							small.job-type Full-time
+						span.job-location Perú
+						span.job-time 1d
+				a.job-box.freelance.hvr(href="job")
+					.container
+						span.job-description 
+							span.job-title Desarrollador UI
+							span.job-company Twitter, Inc
+							small.job-type Freelance
+						span.job-location México
+						span.job-time 1d
+				a.job-box.parttime.hvr(href="job")
+					.container
+						span.job-description
+							span.job-title Diseñador UX/UI / Front-end
+							span.job-company Facebook
+							small.job-type Part-time  
+						span.job-location España
+						span.job-time 1d

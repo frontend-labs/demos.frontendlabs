@@ -1,0 +1,81 @@
+/*
+ * 
+ * @module layout
+ */
+
+@require '../_base/variables'
+@require '../_base/normalize'
+@require '../_helpers/*'
+@require '../_plugins/*'
+
+@require '_blocks/*'
+@require '_elements/*'
+@require '_layout/footer'
+@require '_layout/header'
+@require '_utilities/*'
+
+*, *:before, *:after 
+	box-sizing border-box
+	
+h1
+	margin 0
+	font-size 2rem
+
+.container
+	width $wrapperWidth 
+	margin 0 auto 
+	+tablet()
+		width 90%
+	+mobile()
+		width 95%
+
+body
+	color $fontColor
+	background lighten($lightGrey,80%)
+	
+.main-content
+	col(8/12, gutter: 5)
+	*
+		text-align justify
+		
+	
+.sidebar
+	col(4/12, gutter: 5)
+	
+.hvr
+	transform translateZ(0)
+	box-shadow 0 0 1px rgba(0, 0, 0, 0)
+	backface-visibility hidden
+	-moz-osx-font-smoothing grayscale
+	position relative 
+	overflow hidden
+	&:before 
+		content ""
+		position absolute
+		z-index -1
+		left -5px
+		top 0
+		bottom 0
+		background darken($brandPrimary, 10%)
+		width 5px 
+		transform translateX(0)
+		transition-property transform
+		transition-duration 0.3s
+		transition-timing-function ease-out
+	&:hover:before, &:focus:before, &:active:before
+		transform translateX(5px)
+.fel-ad
+	background lighten(grey, 80%)
+	position relative
+	margin 30px 0
+	border-radius $borderRadius
+	&:after 
+		content "visita frontendlabs.io "
+		text-align center 
+		color white 
+		font-size 30px 
+		display block 
+		padding 140px 10px
+		word-wrap break-word
+		
+		

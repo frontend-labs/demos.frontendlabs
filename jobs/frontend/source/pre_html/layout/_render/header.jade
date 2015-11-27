@@ -1,0 +1,35 @@
+header
+	.container
+		.nav
+			a.logo(href="/") 
+				u jobs
+				span de FrontendLabs.io
+			a(href="javascript:;") Login
+			a.btn(href="javascript:;") Publicar empleo
+	.filter-search
+		.container
+			.search-bar
+				span.icon.icon-search
+				input(type="text", placeholder="Buscar")
+			//-span.separator 
+			.location
+				.select
+					i.icon.icon-location
+					select
+						option Todos los lugares
+						option Perú
+						option España
+			//-span.separator
+			.job-type
+				label 
+					input(id="chkFreelance", type="checkbox", name="chkJobType", checked="checked") 
+					| Freelance
+					span.control-indicator.icon.icon-check.freelance
+				label 
+					input(id="chkFulltime", type="checkbox", name="chkJobType", checked="checked") 
+					| Full-time 
+					span.control-indicator.icon.icon-check.fulltime
+				label 
+					input(id="chkParttime", type="checkbox", name="chkJobType") 
+					| Part-time 
+					span.control-indicator.icon.icon-check.parttime
