@@ -28,10 +28,11 @@ head
 	meta(property='og:title', content='#{page.og.title}')
 	meta(property='og:type', content='#{page.og.type}')
 	meta(property='og:url', content='#{page.url}')
-	
+		
 	link(href='#{page.static_url}css/layout/fonts.css#{page.version}', media='all', rel='stylesheet', type='text/css')
 	link(href='#{page.static_url}css/layout/layout.css#{page.version}', media='all', rel='stylesheet', type='text/css')
-	link(href='#{page.static_url}css/views/#{section}.css#{page.version}', media='all', rel='stylesheet', type='text/css')
+	link(href='#{page.static_url}css/views/index.css#{page.version}', media='all', rel='stylesheet', type='text/css')
+	link(href='#{page.static_url}css/views/job.css#{page.version}', media='all', rel='stylesheet', type='text/css')
 
 	link(href='#{page.static_url}images/favicon.ico#{page.version}', rel='icon', type='image/vnd.microsoft.icon')
 	link(href='#{page.static_url}images/favicon.ico#{page.version}', rel='shortcut icon', type='image/vnd.microsoft.icon')

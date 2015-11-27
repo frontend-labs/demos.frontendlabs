@@ -29,9 +29,9 @@ function Task(gulp, path, config, plugins, functions){
       .pipe(plugins.jade({
         pretty: true,
         locals: {
-          baseUrl   : "/",
-          staticUrl : "/",
-          elementUrl: "/",
+          baseUrl   : "../../",
+          staticUrl : "../../",
+          elementUrl: "../../",
           version   : new Date().getTime(),
           section   : "default"
         }
