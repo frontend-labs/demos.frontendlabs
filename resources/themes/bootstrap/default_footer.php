@@ -1,5 +1,5 @@
 <hr>
 
 <div class="footer">
-    Powered by, <a href="http://www.directorylister.com">Directory Lister</a>
+	Frontend Labs - 2015
 </div>
