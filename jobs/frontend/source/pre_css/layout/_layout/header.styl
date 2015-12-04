@@ -35,7 +35,9 @@ header
 
 .filter-search
 	background lighten($brandPrimary, 95%) //$lightGrey
-	padding 20px 0
+	padding 20px 0 
+	+mobile()
+		background indianred
 	.container
 		display flex
 		align-items center
@@ -47,11 +49,12 @@ header
 		display inline-block
 		vertical-align middle
 	.search-bar
-		//col(2/5, gutter:1)
 		color #ccc
 		position relative
-		width 45%
+		width 40%
 		flex none
+		+tablet()
+			width 20%
 		.icon
 			position absolute
 			top 12px
@@ -68,7 +71,6 @@ header
 				outline none 
 				box-shadow 0 0 2px $brandPrimary
 	.location
-		//col(1/5, gutter:1)
 		border-left 1px solid darken($lightGrey,5%)
 		border-right 1px solid darken($lightGrey,5%)
 		flex 1
@@ -84,13 +86,12 @@ header
 			select
 				padding-left 40px
 	.job-type
-		//col(2/5, gutter:1)
-		width 30%
+		width 35%
 		flex none
 		display flex 
+		+tablet()
+			width 50% 
 		input 
-			//outline none 
-			//margin-right 5px
 			position absolute
 			opacity 0
 			z-index -1

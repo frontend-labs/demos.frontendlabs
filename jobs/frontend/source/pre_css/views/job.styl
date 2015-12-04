@@ -14,6 +14,8 @@
 	cursor pointer
 	transition 0.3s all ease
 	z-index 1
+	animation animatedItem 1.5s ease infinite alternate
+
 	&:hover 
 		transition 0.3s all ease
 		border-radius 0 50% 50% 50%
@@ -163,11 +165,16 @@
 		color inherit
 		font-size 1rem
 		padding 5px 0
-		border-top 1px solid darken($lightGrey,5%)
+		border-top 1px solid darken($lightGrey, 5%)
 		vertical-align middle
 		width 50%
 		
-				
-				
-		
-			
+@keyframes animatedItem
+	from
+		-webkit-transform translate(0,10px)
+		-moz-transform translate(0,10px)
+		transform translate(0,10px)
+	to
+		-webkit-transform translate(0,0)
+		-moz-transform translate(0,0)
+		transform translate(0,0)

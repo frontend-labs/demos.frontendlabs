@@ -33,9 +33,12 @@ header
 	.container
 		display flex 
 		align-items center
+		flex-wrap wrap 
 		> span 
 			flex 1
 			text-align center
+			+mobile()
+				flex initial
 	a 
 		text-decoration none
 		color inherit
@@ -48,6 +51,8 @@ header
 		flex none !important
 		width 45%
 		text-align left !important
+		+mobile()
+			width 100%
 	.job-title
 		font-size 1.3rem
 		display block
