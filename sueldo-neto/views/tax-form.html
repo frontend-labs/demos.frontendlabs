@@ -1,0 +1,55 @@
+<form class ="TaxForm">
+  <h1>Calculo del Ingreso Neto </h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <label >Ingreso Bruto por Mes </label>
+        </div>
+        <div class="col-md-6">
+          <input [ngModel]="incomeByMonth" (ngModelChange)="calculateTaxDetail($event)">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Ingreso Bruto por Año </label>
+        </div>
+        <div class="col-md-6">
+          <input disabled [(ngModel)]="incomeByYear">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Monto afecto a impuestos</label>
+        </div>
+        <div class="col-md-6">
+          <input disabled [(ngModel)]="incomeAfectedByTax">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <label>UIT</label>
+        </div>
+        <div class="col-md-6">
+          <input disabled [(ngModel)]="UIT">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>No afecto a Impuesto</label>
+        </div>
+        <div class="col-md-6">
+          <input disabled [(ngModel)]="freeIncomeAfectedByTax">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Taxes" *ngIf="isIncomeAfectedByTax" >
+    <h2> Impuestos Detallados </h2>
+    <div *ngFor="#taxDetail of taxDetails">
+      <tax-detail-component [tax-detail]="taxDetail"></tax-detail-component>
+    </div>
+  </div>
+</form>

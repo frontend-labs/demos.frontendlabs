@@ -1,0 +1,22 @@
+.IncomingForm {
+  padding: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.IncomingForm h1 {
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+.IncomingForm .row {
+  margin: 0 0 5px 0;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+
+
