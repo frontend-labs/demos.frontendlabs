@@ -72,7 +72,7 @@ System.register(['angular2/core', '../tax-detail/tax.detail', '../tax-detail/tax
                 TaxComponent = __decorate([
                     core_1.Component({
                         selector: 'tax-component',
-                        templateUrl: 'templates/tax/tax-form.html',
+                        templateUrl: 'sueldo-neto/templates/tax/tax-form.html',
                         directives: [tax_detail_1.TaxDetail],
                     }), 
                     __metadata('design:paramtypes', [tax_detail_service_1.TaxDetailService])

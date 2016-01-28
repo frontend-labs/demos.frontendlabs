@@ -53,7 +53,7 @@ System.register(['angular2/core'], function(exports_1) {
                 ], TaxDetail.prototype, "taxDetail", void 0);
                 TaxDetail = __decorate([
                     core_1.Component({
-                        selector: 'templates/tax-detail/tax-detail-component',
+                        selector: 'sueldo-neto/templates/tax-detail/tax-detail-component',
                         template: "\n      <div>Monto afecto: {{taxDetail.amountAfected}}</div>\n      <div>Impuestos: {{taxDetail.totalTax}}</div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
