@@ -1,1 +1,3 @@
-saludo = 'hola'
+saludo = 'hola2'
+alert saludo
+console.log alert

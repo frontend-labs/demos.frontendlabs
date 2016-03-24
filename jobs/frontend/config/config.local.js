@@ -6,7 +6,7 @@
  */
 
 var CONFIG = {
-	prod : true,
+	prod : false,
 	port : 4000,
 	tests : {
 		unit: {module: 'sections', sections : 'home'}

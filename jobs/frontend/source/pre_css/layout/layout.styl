@@ -31,7 +31,7 @@ h1
 
 body
 	color $fontColor
-	background lighten($lightGrey,80%)
+	background lighten($lightGrey, 80%)
 	
 .main-content
 	col(8/12, gutter: 5)
@@ -78,4 +78,93 @@ body
 		padding 140px 10px
 		word-wrap break-word
 		
+.modal
+	display flex
+	justify-content center
+	align-items center
+	position fixed
+	width 100%
+	height 100%
+	background rgba(black , 0.5) //rgba(black, 0.6) //rgba(white, 0.8)
+	z-index 1000
+	opacity 0
+	pointer-events none
+	top 0
+	.modal-content
+		width 350px
+		background lighten($brandPrimary, 95%) //lighten($brandPrimary, 30%)
+		z-index 1001
+		padding 10px 20px
+		border-radius $borderRadius
+		color $brandPrimary
+		position relative
+	&.modal--open
+		pointer-events auto
+		opacity 1
 		
+
+.login-box
+	.close-modal
+		text-decoration none
+		color inherit
+		font-size 30px
+		position absolute
+		right 20px
+		top 10px
+	.lnk-forgot-password
+		font-size 13px
+		text-align center
+		//color white
+		margin 10px 0
+		display block	
+		cursor pointer
+	a, button
+		opacity .8
+		transition all 0.3s ease
+		&:hover 
+			transition all 0.3s ease
+			opacity 1
+			
+	.modal-content
+		padding 20px 30px 50px
+	h2 
+		text-align center 
+		margin 30px 0
+		
+	.label-floatlabel  
+		font-size 14px !important
+		color $brandPrimary !important //$grey !important
+		top 5px !important
+		left 10px !important
+		font-weight normal !important
+	//::-webkit-input-placeholder
+		//color white
+	input[type="email"], input[type="password"], input[type="text"]
+		border 1px solid lighten($brandPrimary, 70%)
+		padding 0 10px
+		height 50px
+		width 100%
+		outline none 
+		color $grey
+		background-color white
+		border-radius $borderRadius
+		//border-bottom 3px solid white
+	//input:focus:invalid 
+		//border-color tomato //border-bottom-color tomato
+	input:required:valid
+		border-color lightgreen
+	.btn-login
+		width 100%
+		border none 
+		background darken($brandPrimary, 10%)
+		border-radius $borderRadius
+		padding 15px
+		outline none 
+		margin-top 20px
+		color white  
+	.frm-group
+		margin-top 20px
+		label
+			display none
+			margin-bottom 10px
+			

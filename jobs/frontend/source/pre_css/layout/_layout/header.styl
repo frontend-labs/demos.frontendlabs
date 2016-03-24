@@ -3,7 +3,32 @@
 * @module layout
 * @class header
 */
-
+body.fixed
+	header
+		position fixed 
+		width 100%
+		z-index 1
+		top 0
+		.header-top
+			display none
+		.filter-search 
+			padding 10px 0
+			transition all 0.3s ease-in
+			.logo
+				display initial
+				font-size 2.5rem
+				letter-spacing -2px
+				margin-right 30px 
+				flex 0
+				transition font-size 0.3s ease
+				
+			.search-bar
+				width 30%
+				input
+					padding-top 10px
+					padding-bottom 10px
+	.board
+		margin-top 220px
 header
 	.nav
 		display flex 
@@ -30,14 +55,14 @@ header
 			letter-spacing 0
 			font-weight normal
 			margin-left 1rem
-			color lighten($fontColor, 80%)
+			color lighten($fontColor, 80%)	
 
 
 .filter-search
 	background lighten($brandPrimary, 95%) //$lightGrey
 	padding 20px 0 
-	+mobile()
-		background indianred
+	transition all 0.3s ease-in
+	
 	.container
 		display flex
 		align-items center
@@ -48,6 +73,12 @@ header
 		width 1px
 		display inline-block
 		vertical-align middle
+	.logo
+		//display none 
+		font-size 0
+		flex 0
+		transition font-size 0.3s ease
+		
 	.search-bar
 		color #ccc
 		position relative
@@ -67,9 +98,11 @@ header
 			padding 13px 10px 13px 40px
 			width 100%
 			font-size 1.1rem
+			border 1px solid lighten($brandPrimary, 80%)
+			
 			&:focus 
 				outline none 
-				box-shadow 0 0 2px $brandPrimary
+				//box-shadow 0 0 2px $brandPrimary
 	.location
 		border-left 1px solid darken($lightGrey,5%)
 		border-right 1px solid darken($lightGrey,5%)
