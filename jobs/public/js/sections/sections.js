@@ -10,7 +10,8 @@ App = (function() {
     modalContent: ".modal-content",
     btnCloseModal: ".close-modal",
     filterSearchBar: "header .filter-search",
-    headerTop: "header .header-top"
+    headerTop: "header .header-top",
+    iconFilter: "header .icon-filter"
   };
   catchDom = function() {
     dom.lnkLogin = $(st.lnkLogin);
@@ -20,11 +21,13 @@ App = (function() {
     dom.btnCloseModal = $(st.btnCloseModal);
     dom.filterSearchBar = $(st.filterSearchBar);
     dom.headerTop = $(st.headerTop);
+    dom.iconFilter = $(st.iconFilter);
   };
   subscribeEvents = function() {
     dom.lnkLogin.on("click", events.showLoginBox);
     dom.btnCloseModal.on("click", events.closeModal);
     $(window).on("scroll", events.fixHeader);
+    dom.iconFilter.on("click", events.showFilters);
   };
   events = {
     showLoginBox: function() {
@@ -46,6 +49,10 @@ App = (function() {
           $("body").removeClass("fixed");
         }
       }
+    },
+    showFilters: function() {
+      console.log('asda');
+      $("header .location, header .job-type").toggleClass("hide-filter");
     }
   };
   functions = {

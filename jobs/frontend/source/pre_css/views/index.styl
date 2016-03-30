@@ -27,8 +27,7 @@
 		> span 
 			flex 1
 			text-align center
-			+mobile()
-				flex initial
+
 	a 
 		text-decoration none
 		color inherit
@@ -42,11 +41,19 @@
 		width 45%
 		text-align left !important
 		+mobile()
-			width 100%
+			width 90%
+	.job-location
+		+mobile()
+			display none 
 	.job-title
 		font-size 1.3rem
 		display block
 		line-height 1.2
+		overflow hidden 
+		text-overflow ellipsis
+		white-space nowrap
+		+mobile()
+			font-size 1.1rem
 	.job-type
 		color white
 		font-size 0.8rem 

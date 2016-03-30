@@ -63,17 +63,6 @@
   flex: 1;
   text-align: center;
 }
-@media only screen and (max-width: 400px) {
-  .job-box .container > span {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -o-box-flex: 1;
-    box-flex: 1;
-    -webkit-flex: initial;
-    -ms-flex: initial;
-    flex: initial;
-  }
-}
 .job-box a {
   text-decoration: none;
   color: inherit;
@@ -102,15 +91,29 @@
   width: 45%;
   text-align: left !important;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 800px) {
   .job-box .job-description {
-    width: 100%;
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .job-box .job-location {
+    display: none;
   }
 }
 .job-box .job-title {
   font-size: 1.3rem;
   display: block;
   line-height: 1.2;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 800px) {
+  .job-box .job-title {
+    font-size: 1.1rem;
+  }
 }
 .job-box .job-type {
   color: #fff;

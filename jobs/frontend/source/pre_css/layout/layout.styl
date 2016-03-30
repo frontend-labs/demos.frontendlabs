@@ -27,7 +27,7 @@ h1
 	+tablet()
 		width 90%
 	+mobile()
-		width 95%
+		width 90%
 
 body
 	color $fontColor
@@ -35,12 +35,19 @@ body
 	
 .main-content
 	col(8/12, gutter: 5)
+	+mobile()
+		stack()
+		
+		
 	*
 		text-align justify
 		
 	
 .sidebar
 	col(4/12, gutter: 5)
+	+mobile()
+		stack()
+	
 	
 .hvr
 	transform translateZ(0)

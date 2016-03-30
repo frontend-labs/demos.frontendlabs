@@ -29,8 +29,9 @@ header
 			.search-bar
 				span.icon.icon-search
 				input(type="text", placeholder="Buscar")
+			span.icon.icon-filter
 			//-span.separator 
-			.location
+			.location.hide-filter
 				.select
 					i.icon.icon-location
 					select
@@ -38,7 +39,7 @@ header
 						option Perú
 						option España
 			//-span.separator
-			.job-type
+			.job-type.hide-filter
 				label 
 					input(id="chkFreelance", type="checkbox", name="chkJobType", checked="checked") 
 					| Freelance

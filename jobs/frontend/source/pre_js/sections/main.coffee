@@ -8,6 +8,7 @@ App = (->
 		btnCloseModal: ".close-modal"
 		filterSearchBar: "header .filter-search"
 		headerTop: "header .header-top"
+		iconFilter: "header .icon-filter"
 
 	catchDom = ->
 		dom.lnkLogin = $(st.lnkLogin)
@@ -17,6 +18,7 @@ App = (->
 		dom.btnCloseModal = $(st.btnCloseModal)
 		dom.filterSearchBar = $(st.filterSearchBar)
 		dom.headerTop = $(st.headerTop)
+		dom.iconFilter = $(st.iconFilter)
 
 		return
 
@@ -24,6 +26,7 @@ App = (->
 		dom.lnkLogin.on "click", events.showLoginBox
 		dom.btnCloseModal.on "click", events.closeModal
 		$(window).on "scroll", events.fixHeader
+		dom.iconFilter.on "click", events.showFilters
 		return
 
 	events =
@@ -45,6 +48,12 @@ App = (->
 					$("body").addClass "fixed"
 				else 
 					$("body").removeClass "fixed"
+			return
+
+		showFilters: ->
+			console.log 'asda'
+			$("header .location, header .job-type").toggleClass("hide-filter")
+
 			return
 
 	functions =
