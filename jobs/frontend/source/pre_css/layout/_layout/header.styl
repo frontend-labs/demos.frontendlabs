@@ -21,13 +21,16 @@ body.fixed
 				font-size 2.5rem
 				letter-spacing -2px
 				margin-right 30px 
-				flex 0
+				flex 1
 				transition font-size 0.3s ease
+				text-align left 
 				+mobile()
 					display initial
 				
 			.search-bar
 				width 30%
+				+mobile()
+					flex-basis 50%
 				input
 					padding-top 10px
 					padding-bottom 10px

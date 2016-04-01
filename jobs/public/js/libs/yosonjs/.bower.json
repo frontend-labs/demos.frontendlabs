@@ -1,0 +1,51 @@
+{
+  "name": "yosonjs",
+  "version": "0.0.17-alpha",
+  "homepage": "https://github.com/frontend-labs/yosonjs",
+  "authors": [
+    "andru255@gmail.com"
+  ],
+  "description": "Lightweight library for manage modular scripts",
+  "main": "build/yoson-min.js",
+  "keywords": [
+    "yosonjs",
+    "modular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "config",
+    "docs",
+    "examples",
+    "report",
+    "src",
+    "tasks",
+    "test",
+    "bower_components",
+    ".gitignore",
+    ".travis.yml",
+    "DEVELOPMENT.md",
+    "Gruntfile.js",
+    "LICENSE.md",
+    "README.md",
+    "RequireConfig.js",
+    "bower.json",
+    "changelog",
+    "files.md",
+    "package.json",
+    "CHANGELOG.md",
+    "TODO.md",
+    "install.sh",
+    "validate-commit-message.js",
+    ".jshintrc"
+  ],
+  "_release": "0.0.17-alpha",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.17-alpha",
+    "commit": "b693eed208b5b189b3203475b52196eb5bf0f015"
+  },
+  "_source": "git://github.com/frontend-labs/yosonjs.git",
+  "_target": "~0.0.16-alpha",
+  "_originalSource": "yosonjs"
+}
