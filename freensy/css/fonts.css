@@ -1,0 +1,18 @@
+/*
+* Font Styles
+* @module fonts
+**/
+@font-face {
+  font-family: "futura";
+  src: url("../fonts/futura/futura-webfont.eot");
+  src: url("../fonts/futura/futura-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/futura/futura-webfont.woff") format("woff"), url("../fonts/futura/futura-webfont.ttf") format("truetype"), url("../fonts/futura/futura-webfont.svg#futura") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "iconFonts";
+  src: url("../fonts/iconFonts/iconFonts-webfont.eot");
+  src: url("../fonts/iconFonts/iconFonts-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconFonts/iconFonts-webfont.woff") format("woff"), url("../fonts/iconFonts/iconFonts-webfont.ttf") format("truetype"), url("../fonts/iconFonts/iconFonts-webfont.svg#iconFonts") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
