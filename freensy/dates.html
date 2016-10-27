@@ -45,62 +45,42 @@
     <!-- end header-->
     <div class="p-bg">
       <div class="l-container">
-        <div class="c-box-main-img"><img class="c-box-main-img__img" src="img/gifts.png"></div>
-        <div class="c-content l-one-half u-pullRight">
-          <form class="c-content__step1">
-            <h1 class="c-content__title">Juega al amigo secreto</h1>
-            <h3 class="c-content__subtitle">Crea tu juego para invitar a todos tus amigos</h3>
-            <div class="c-content__form-group">
-              <label class="c-content__label">Elige un nombre para tu juego:
-                <input class="c-content__input e-input" id="txtGameName" type="text">
+        <div class="c-content l-one-half u-noFloat">
+          <h3 class="c-content__subtitle">Ahora ingresa los detalles del juego:</h3>
+          <div class="c-content__form-group">
+            <label class="c-content__label">Fecha del sorteo: <span class="icon icon-calendar"></span>
+              <input class="c-content__input e-input datedropper" type="text" required>
+            </label>
+          </div>
+          <div class="c-content__form-group">
+            <label class="c-content__label">Fecha del intercambio de regalos: <span class="icon icon-calendar"></span>
+              <input class="c-content__input e-input datedropper" type="text" required>
+            </label>
+          </div>
+          <div class="c-content__form-group">
+            <label class="c-content__label">Precio sugerido del regalo:<span class="icon icon-pen"></span>
+              <input class="c-content__input e-input" type="number" required>
+            </label>
+          </div>
+          <input class="c-content__button e-button e-button--block u-mb20" id="btnCreateGame" type="submit" value="GUARDAR">
+        </div>
+        <div class="remodal" data-remodal-id="login">
+          <button class="remodal-close" data-remodal-action="close"></button>
+          <form class="c-login">
+            <h2 class="c-login__title">Iniciar sesión </h2>
+            <div class="c-login__form-group">
+              <label class="c-login__label">Correo electrónico: 
+                <input class="c-login__input e-input" type="email">
               </label>
             </div>
-            <button class="c-content__button e-button" id="btnNext" type="button">Siguiente →</button>
-          </form>
-          <form class="c-content__step2 frm-parsley u-hidden" id="frmSignUp">
-            <h3 class="c-content__subtitle u-mt0">Ahora regístrate para administrar este juego</h3>
-            <div class="c-content__columns">
-              <div class="c-content__form-group">
-                <label class="c-content__label">Nombre: 
-                  <input class="c-content__input e-input" type="text" required>
-                </label>
-              </div>
-              <div class="c-content__form-group">
-                <label class="c-content__label">Apellido: 
-                  <input class="c-content__input e-input" type="text" required>
-                </label>
-              </div>
-            </div>
-            <div class="c-content__form-group">
-              <label class="c-content__label">Correo electrónico:
-                <input class="c-content__input e-input" type="email" required>
+            <div class="c-login__form-group">
+              <label class="c-login__label">Contraseña: 
+                <input class="c-login__input e-input" type="password">
               </label>
             </div>
-            <div class="c-content__form-group">
-              <label class="c-content__label">Contraseña:
-                <input class="c-content__input e-input" type="password" required>
-              </label>
-            </div>
-            <input class="c-content__button e-button e-button--block" id="btnCreateGame" type="submit" value="CREAR JUEGO">
+            <input class="e-button e-button--block" type="submit" value="INGRESAR"><a class="c-login__forgot-password" href="javascript:;">Olvidé mi contraseña</a>
           </form>
         </div>
-      </div>
-      <div class="remodal" data-remodal-id="login">
-        <button class="remodal-close" data-remodal-action="close"></button>
-        <form class="c-login">
-          <h2 class="c-login__title">Iniciar sesión </h2>
-          <div class="c-login__form-group">
-            <label class="c-login__label">Correo electrónico: 
-              <input class="c-login__input e-input" type="email">
-            </label>
-          </div>
-          <div class="c-login__form-group">
-            <label class="c-login__label">Contraseña: 
-              <input class="c-login__input e-input" type="password">
-            </label>
-          </div>
-          <input class="e-button e-button--block" type="submit" value="INGRESAR"><a class="c-login__forgot-password" href="javascript:;">Olvidé mi contraseña</a>
-        </form>
       </div>
     </div>
     <!-- end footer-->

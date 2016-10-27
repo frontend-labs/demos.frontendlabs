@@ -207,7 +207,8 @@ h3 {
   font-size: 1.5rem;
 }
 .icon,
-.parsley-errors-list.filled:before {
+.parsley-errors-list.filled:before,
+.c-message p:before {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-family: "iconFonts";
@@ -220,26 +221,45 @@ h3 {
   text-transform: none;
   vertical-align: middle;
 }
+.icon-calendar:before {
+  content: "\E001";
+}
 .icon-close:before,
 body .l-header__menu-icon--active:before,
 .l-header__menu-icon--active:before {
-  content: "\E001";
-}
-.icon-delete:before {
   content: "\E002";
 }
-.icon-menu:before {
+.icon-delete:before {
   content: "\E003";
 }
-.icon-pointer:before {
+.icon-email:before {
   content: "\E004";
 }
-.icon-triangle:before {
+.icon-gift:before {
   content: "\E005";
+}
+.icon-lock:before {
+  content: "\E006";
+}
+.icon-menu:before {
+  content: "\E007";
+}
+.icon-pen:before {
+  content: "\E008";
+}
+.icon-pointer:before {
+  content: "\E009";
+}
+.icon-tick:before,
+.c-message p:before {
+  content: "\E00A";
+}
+.icon-triangle:before {
+  content: "\E00B";
 }
 .icon-warning:before,
 .parsley-errors-list.filled:before {
-  content: "\E006";
+  content: "\E00C";
 }
 html.remodal-is-locked {
   overflow: hidden;
@@ -648,6 +668,15 @@ textarea.parsley-error,
 .u-textCenter {
   text-align: center;
 }
+.u-pullLeft {
+  float: left !important;
+}
+.u-pullRight {
+  float: right !important;
+}
+.u-noFloat {
+  float: none !important;
+}
 .u-mb20 {
   margin-bottom: 20px !important;
 }
@@ -666,7 +695,8 @@ textarea.parsley-error,
 .u-mt40 {
   margin-top: 40px !important;
 }
-.relative {
+.relative,
+.u-relative {
   position: relative;
 }
 .u-hidden {
@@ -688,6 +718,11 @@ textarea.parsley-error,
   content: '';
   display: table;
   clear: both;
+}
+.u-centerBlock {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 .e-button {
   background-color: #f35252;
@@ -823,8 +858,7 @@ textarea.parsley-error,
     left: -60px;
   }
 }
-.c-create-game {
-  width: calc(99.9% * 1/2 - (30px - 30px * 1/2));
+.c-content {
   border: 3px dashed rgba(0,0,0,0.2);
   padding: 30px 50px;
   background-color: rgba(235,185,43,0.9);
@@ -832,22 +866,7 @@ textarea.parsley-error,
   min-height: 500px;
   z-index: 1;
 }
-.c-create-game:nth-child(1n) {
-  float: left;
-  margin-right: 30px;
-  clear: none;
-}
-.c-create-game:last-child {
-  margin-right: 0;
-}
-.c-create-game:nth-child(2n) {
-  margin-right: 0;
-  float: right;
-}
-.c-create-game:nth-child(2n + 1) {
-  clear: both;
-}
-.c-create-game__title {
+.c-content__title {
   color: #535353;
   font-family: 'Pacifico', 'Arial', 'sans-serif';
   letter-spacing: 1px;
@@ -856,23 +875,35 @@ textarea.parsley-error,
   line-height: 1.2;
   text-align: center;
 }
-.c-create-game__subtitle {
+.c-content__subtitle {
   color: #fff;
   font-family: 'futura', Arial, sans-serif;
   letter-spacing: 1px;
 }
-.c-create-game__label {
+.c-content__label {
   font-size: 1rem;
   margin-bottom: 10px;
   display: block;
   font-family: 'futura', Arial, sans-serif;
+  position: relative;
 }
-.c-create-game__input-group {
+.c-content__label .icon {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+}
+.c-content__label .icon ~ .c-content__input {
+  padding-left: 45px;
+}
+.c-content__input {
+  margin-top: 6px;
+}
+.c-content__input-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.c-create-game__input-group .u-blur {
+.c-content__input-group .u-blur {
   color: #fff;
   position: absolute;
   left: 20px;
@@ -883,96 +914,63 @@ textarea.parsley-error,
   height: 25px;
   word-break: break-all;
 }
-.c-create-game__input-group .c-create-game__input {
+.c-content__input-group .c-content__input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.c-create-game__input-group .c-create-game__button {
+.c-content__input-group .c-content__button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
-.c-create-game__form-group {
+.c-content__form-group {
   position: relative;
 }
-.c-create-game__columns {
+.c-content__columns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.c-create-game__columns .c-create-game__form-group:first-child {
+.c-content__columns .c-content__form-group:first-child {
   margin-right: 10px;
 }
-.c-create-game__columns .c-create-game__form-group:nth-child(2) {
+.c-content__columns .c-content__form-group:nth-child(2) {
   margin-left: 10px;
 }
-.c-create-game__step1 {
+.c-content__step1 {
   padding: 20px 0;
 }
-.c-create-game__step2 {
+.c-content__step2 {
   padding: 0;
 }
-.c-create-game--large {
-  float: none;
-  clear: both;
-  width: 100%;
-}
 @media only screen and (min-width: 530px) and (max-width: 880px) {
-  .c-create-game {
-    width: calc(99.9% * 1/1 - (30px - 30px * 1/1));
+  .c-content {
     float: none !important;
     width: 70%;
     margin: auto !important;
   }
-  .c-create-game:nth-child(1n) {
-    float: left;
-    margin-right: 30px;
-    clear: none;
-  }
-  .c-create-game:last-child {
-    margin-right: 0;
-  }
-  .c-create-game:nth-child(1n) {
-    margin-right: 0;
-    float: right;
-  }
-  .c-create-game:nth-child(1n + 1) {
-    clear: both;
-  }
 }
 @media only screen and (max-width: 530px) {
-  .c-create-game {
-    width: calc(99.9% * 1/1 - (30px - 30px * 1/1));
+  .c-content {
     padding-left: 30px;
     padding-right: 30px;
     width: 100%;
   }
-  .c-create-game:nth-child(1n) {
-    float: left;
-    margin-right: 30px;
-    clear: none;
-  }
-  .c-create-game:last-child {
-    margin-right: 0;
-  }
-  .c-create-game:nth-child(1n) {
-    margin-right: 0;
-    float: right;
-  }
-  .c-create-game:nth-child(1n + 1) {
-    clear: both;
-  }
-  .c-create-game__title {
+  .c-content__title {
     font-size: 2.3rem;
+    letter-spacing: 0;
   }
-  .c-create-game__columns {
+  .c-content__subtitle {
+    letter-spacing: 0;
+  }
+  .c-content__columns {
     display: block;
   }
-  .c-create-game__columns .c-create-game__form-group:first-child {
+  .c-content__columns .c-content__form-group:first-child {
     margin-right: 0;
   }
-  .c-create-game__columns .c-create-game__form-group:nth-child(2) {
+  .c-content__columns .c-content__form-group:nth-child(2) {
     margin-left: 0;
   }
 }
@@ -987,6 +985,18 @@ textarea.parsley-error,
 .c-login__label {
   margin-bottom: 10px;
   display: block;
+  position: relative;
+}
+.c-login__label .icon {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+}
+.c-login__label .icon ~ .c-login__input {
+  padding-left: 40px;
+}
+.c-login__input {
+  margin-top: 5px;
 }
 .c-login__forgot-password {
   text-align: center;
@@ -1000,6 +1010,20 @@ textarea.parsley-error,
   -webkit-transition: 0.2s all ease;
   transition: 0.2s all ease;
   opacity: 0.8;
+}
+.c-message--success {
+  background-color: #65d98b;
+}
+.c-message .l-container {
+  position: relative;
+}
+.c-message p {
+  padding-left: 2rem;
+}
+.c-message p:before {
+  font-size: 2rem;
+  position: absolute;
+  left: 2rem;
 }
 .l-container {
   max-width: 1140px;
@@ -1019,8 +1043,8 @@ textarea.parsley-error,
 }
 .l-one-half {
   width: calc(99.9% * 1/2 - (30px - 30px * 1/2));
-  float: none !important;
-  margin: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .l-one-half:nth-child(1n) {
   float: left;
@@ -1039,7 +1063,6 @@ textarea.parsley-error,
 }
 .l-one-third {
   width: calc(99.9% * 1/3 - (30px - 30px * 1/3));
-  float: none !important;
   margin: auto !important;
 }
 .l-one-third:nth-child(1n) {
@@ -1059,7 +1082,6 @@ textarea.parsley-error,
 }
 .l-two-thirds {
   width: calc(99.9% * 2/3 - (30px - 30px * 2/3));
-  float: none !important;
   margin: auto !important;
 }
 .l-two-thirds:nth-child(1n) {
@@ -1139,6 +1161,7 @@ textarea.parsley-error,
   width: 100%;
   background-color: #f3f3f3;
   height: 70px;
+  box-shadow: 0 1px 15px 1px rgba(0,0,0,0.05);
 }
 .l-header .l-container {
   display: -webkit-box;
@@ -1228,6 +1251,10 @@ textarea.parsley-error,
 .l-header__dropdown-separator {
   border-top: 2px solid #e7e7e7;
 }
+.l-header-expand {
+  height: 70px;
+  visibility: hidden;
+}
 @media only screen and (min-width: 530px) and (max-width: 880px) {
   .l-header__nav-item {
     margin-left: 5px;
@@ -1244,13 +1271,12 @@ textarea.parsley-error,
 @media only screen and (max-width: 530px) {
   body .l-header {
     height: auto;
-    padding-top: 10px;
   }
   .l-header__nav {
     display: none;
     position: absolute;
     left: 0;
-    top: 45px;
+    top: 35px;
     width: 100%;
     background-color: #ececec;
   }
@@ -1267,20 +1293,27 @@ textarea.parsley-error,
     border-radius: 0;
   }
   .l-header__logo-img {
-    max-width: 150px;
+    max-width: 120px;
+    margni-top: 10px;
   }
   .l-header__menu-icon {
     display: block;
-    font-size: 1.8rem;
-    padding: 25px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: absolute;
     right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .l-header__menu-icon:before {
+    display: block;
+    margin-top: 14px;
   }
   .l-header__menu-icon--active {
     background-color: #ececec;
   }
   .l-header__menu-icon--active:before {
-    font-size: 2.5rem;
+    display: block;
   }
   .l-header__dropdown {
     display: block;
@@ -1301,14 +1334,14 @@ textarea.parsley-error,
     border-color: #e4e4e4;
   }
 }
-.p-landing {
+.p-bg {
   background-color: #ebb92b;
   padding-bottom: 50px;
   position: relative;
-  padding-top: 110px;
+  padding-top: 30px;
 }
 @media only screen and (max-width: 530px) {
-  .p-landing {
-    padding-top: 90px;
+  .p-bg {
+    padding-top: 30px;
   }
 }

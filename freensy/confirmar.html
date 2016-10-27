@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="#{page.lang}" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<html lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -34,24 +34,25 @@
   </head>
   <body>
     <header class="l-header">
-      <div class="l-container"><a class="l-header__logo" href="http://demos.frontendlabs.io/freensy/"><img class="l-header__logo-img" src="img/freensy.svg"></a><a class="l-header__menu-icon icon icon-menu" id="lnkOpenMenu" href="javascript:;"></a>
+      <div class="l-container"><a class="l-header__logo" href="/"><img class="l-header__logo-img" src="img/freensy.svg"></a><a class="l-header__menu-icon icon icon-menu" id="lnkOpenMenu" href="javascript:;"></a>
         <ul class="l-header__nav" id="headerNav">
-          <li class="l-header__nav-item"><a class="l-header__nav-link" href="/">Crear juego</a></li>
+          <li class="l-header__nav-item"><a class="l-header__nav-link" href="dates.html">Crear juego</a></li>
           <li class="l-header__nav-item"><a class="l-header__nav-link" data-remodal-target="login" href="javascript:;">Iniciar sesión</a></li>
         </ul>
       </div>
     </header>
+    <div class="l-header-expand"></div>
     <!-- end header-->
-    <div class="p-landing">
+    <div class="p-bg">
       <div class="l-container">
         <div class="c-box-main-img"><img class="c-box-main-img__img" src="img/gifts.png"></div>
-        <div class="c-create-game c-create-game--large u-textCenter u-flex">
+        <div class="c-content u-textCenter u-flex">
           <div class="l-two-thirds">
-            <h2 class="c-create-game__title u-mt30">¡Casi listo! Te hemos enviado un correo de confirmación</h2>
-            <h3 class="c-create-game__subtitle">Antes de invitar a tus amigos a unirse al juego, confirma tu correo electrónico.</h3>
-            <div class="c-create-game__form-group u-hidden">
-              <div class="c-create-game__input-group">
-                <input class="c-create-game__input e-input" readonly value="?????????????????????????????????" type="password"><a class="e-button c-create-game__button" href="javascript:;" disabled>Copiar</a>
+            <h2 class="c-content__title u-mt30">¡Casi listo! Te hemos enviado un correo de confirmación</h2>
+            <h3 class="c-content__subtitle">Antes de invitar a tus amigos a unirse al juego, confirma tu correo electrónico.</h3>
+            <div class="c-content__form-group u-hidden">
+              <div class="c-content__input-group">
+                <input class="c-content__input e-input" readonly value="?????????????????????????????????" type="password"><a class="e-button c-content__button" href="javascript:;" disabled>Copiar</a>
               </div>
             </div>
           </div>
@@ -61,12 +62,14 @@
           <form class="c-login">
             <h2 class="c-login__title">Iniciar sesión </h2>
             <div class="c-login__form-group">
-              <label class="c-login__label">Correo electrónico: </label>
-              <input class="c-login__input e-input" type="email">
+              <label class="c-login__label">Correo electrónico: 
+                <input class="c-login__input e-input" type="email">
+              </label>
             </div>
             <div class="c-login__form-group">
-              <label class="c-login__label">Contraseña: </label>
-              <input class="c-login__input e-input" type="password">
+              <label class="c-login__label">Contraseña: 
+                <input class="c-login__input e-input" type="password">
+              </label>
             </div>
             <input class="e-button e-button--block" type="submit" value="INGRESAR"><a class="c-login__forgot-password" href="javascript:;">Olvidé mi contraseña</a>
           </form>
