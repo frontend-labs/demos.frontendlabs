@@ -1,26 +1,26 @@
-# This references a standard debian container from the
-# Docker Hub https://registry.hub.docker.com/_/debian/
-# Read more about containers on our dev center
-# https://devcenter.wercker.com/overview-and-core-concepts/containers/
+# source
+# https://gettingthingstech.com/how-to-deploy-a-hugo-site-to-digitalocean-automatically-with-wercker/
+# https://josephstahl.com/blog/2015/04/24/publishing-a-hugo-blog-to-digitalocean-with-wercker/
 box: node
-# You can also use services such as databases. Read more on our dev center:
-# https://devcenter.wercker.com/administration/services/
-# services:
-    # - postgres
-    # https://devcenter.wercker.com/administration/services/examples/postgresql/
-
-    # - mongo
-    # https://devcenter.wercker.com/administration/services/examples/mongodb/
-
-# This is the build pipeline. Pipelines are the core of wercker
-# Read more about pipelines on our dev center
-# https://devcenter.wercker.com/development/pipelines/
 build:
-    # Steps make up the actions in your pipeline
-    # Read more about steps on our dev center:
-    # https://devcenter.wercker.com/development/steps/
   steps:
-    - michidk/ftp-deploy:
-        destination: ftp://frontendlabs.io:21/home/site/ftp
-        username: $FTP_USER
-        password: $PASSWORD
+    - install-packages:
+        packages: openssh-client rsync
+
+    - add-to-known_hosts:
+        hostname: $HOSTNAME
+
+    - mktemp:
+        envvar: PRIVATE_KEYPATH
+
+    - create-file:
+        name: write key
+        filename: $PRIVATE_KEYPATH 
+        content: $WERCKER_PRIVATE
+        overwrite: true
+
+    - script:
+        name: transfer files
+        code: |
+            rsync -au -e "ssh -i $PRIVATE_KEYPATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress . $USER@$HOSTNAME:/var/www/demos.frontendlabs
+            ssh -i $PRIVATE_KEYPATH -l $USER -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOSTNAME chown -R www-data:www-data /var/www/
